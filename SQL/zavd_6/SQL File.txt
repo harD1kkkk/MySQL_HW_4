@@ -1,0 +1,21 @@
+-- Task 1
+-- START TRANSACTION;
+-- UPDATE profiles 
+-- SET money = money - 100 
+-- WHERE user_id = 1;
+
+-- UPDATE profiles 
+-- SET money = money + 100 
+-- WHERE user_id = 2;
+-- COMMIT;
+
+-- select *
+-- from users as u
+-- join profiles as p
+-- on p.user_id = u.id;
+
+-- Task 2
+-- select *
+-- from users as u
+-- join profiles as p
+-- on p.user_id = u.id;

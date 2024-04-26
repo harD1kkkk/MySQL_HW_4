@@ -1,0 +1,26 @@
+use Data_Base;
+
+drop table if exists Orders;
+drop table if exists Users;
+
+CREATE TABLE IF NOT EXISTS Users (
+    id  INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255),
+    email VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+INSERT INTO Users (name, email) VALUES
+('John Doe', 'john.doe@example.com'),
+('Jane Smith', 'jane.smith@example.com'),
+('Emily Johnson', 'emily.johnson@example.com'),
+('', '');
+
+CREATE TABLE IF NOT EXISTS Orders (
+    id INT PRIMARY KEY,
+    user_id INT,
+    date DATE,
+    total DECIMAL(10, 2),
+    FOREIGN KEY (user_id) REFERENCES Users(id)
+);
+

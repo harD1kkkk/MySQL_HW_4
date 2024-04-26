@@ -1,0 +1,43 @@
+use new_db;
+drop table if exists profiles;
+drop table if exists orders;
+drop table if exists users;
+
+
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL
+);
+
+
+CREATE TABLE profiles (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    money INT NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+
+CREATE TABLE orders (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT NOT NULL,
+    total_price DECIMAL(10,2) NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+INSERT INTO users (name) VALUES 
+('Arthur'), 
+('Sosyak'), 
+('Einstein');
+
+INSERT INTO profiles (user_id, money) VALUES 
+(1, 100), 
+(2, 200), 
+(3, 500);
+
+INSERT INTO orders (user_id, total_price) VALUES 
+(1, 1000.00), 
+(2, 2000.50), 
+(3, 500);
+
+

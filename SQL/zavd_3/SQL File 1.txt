@@ -1,0 +1,23 @@
+use newdb;
+-- Task 1
+-- SELECT u.name
+-- FROM users AS u
+-- JOIN users_movies AS um
+--  ON u.id = um.user_id
+-- JOIN movies AS m 
+-- ON um.movie_id = m.id
+-- WHERE m.title = 'The Shawshank Redemption';
+
+-- Task 2
+-- SELECT m.title
+-- FROM movies AS m
+-- JOIN users_movies AS um 
+-- ON m.id = um.movie_id
+-- WHERE um.user_id = 1;
+
+-- Task 3
+-- UPDATE movies 
+-- SET title = 'The Godfather'
+-- WHERE id=3;
+-- SELECT  m.id, m.title,m.genre
+-- FROM movies AS m

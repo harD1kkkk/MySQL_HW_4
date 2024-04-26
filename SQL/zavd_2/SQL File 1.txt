@@ -1,0 +1,21 @@
+use testdb;
+-- TASK 1
+-- SELECT a.id, a.title, COUNT(c.id)
+-- FROM articles AS a
+-- JOIN comments AS c
+-- ON a.id = c.article_id
+-- GROUP BY a.id;
+
+-- TASK 2
+-- SELECT *
+-- FROM comments
+-- WHERE article_id = 3;
+
+-- TASK 3
+-- DELETE
+-- FROM comments AS c
+-- WHERE c.article_id = 2;
+-- SELECT *
+-- FROM articles AS a
+-- JOIN comments AS c
+-- ON c.article_id = a.id

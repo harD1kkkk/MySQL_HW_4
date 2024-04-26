@@ -1,0 +1,53 @@
+use db;
+
+drop table if exists Order_Products;
+drop table if exists Orders;
+drop table if exists Products;
+
+use db;
+
+drop table if exists Order_Products;
+drop table if exists Orders;
+drop table if exists Products;
+
+CREATE TABLE IF NOT EXISTS Orders (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    date DATE,
+    user_id INT
+);
+
+CREATE TABLE IF NOT EXISTS Products (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255),
+    price DECIMAL(10, 2)
+);
+
+CREATE TABLE IF NOT EXISTS Order_Products (
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    FOREIGN KEY (order_id) REFERENCES Orders(id),
+    FOREIGN KEY (product_id) REFERENCES Products(id)
+);
+
+INSERT INTO Orders (date, user_id) VALUES
+('2024-01-01', 101),
+('2024-01-02', 102),
+('2024-01-03', 103),
+('2024-01-04', 104),
+('2024-01-05', 105);
+
+INSERT INTO Products (name, price) VALUES
+('Car', 10.00),
+('Ball', 20.00),
+('Cat', 30.00),
+('Dog', 25.00),
+('Toy', 25.00);
+
+INSERT INTO Order_Products (order_id, product_id, quantity) VALUES
+(1, 1, 10),
+(1, 2, 1),
+(2, 2, 3),
+(3, 1, 1),
+(3, 4, 1),
+(4, 5, 1); 

@@ -1,0 +1,25 @@
+use testdb;
+-- Task 1
+-- SELECT u.id, u.name, u.email, p.birthday, p.phone
+-- FROM users AS u
+-- JOIN profiles1 AS p 
+-- ON p.user_id = u.id;
+
+-- Task 2
+-- UPDATE profiles1
+-- SET phone="228007123"
+-- WHERE user_id= 2;
+-- SELECT *
+-- FROM users AS u
+-- JOIN profiles1 AS p 
+-- ON p.user_id = u.id
+-- WHERE u.id=2;
+
+-- Task 3
+-- DELETE 
+-- FROM users AS u
+-- WHERE u.id=3; 
+-- SELECT *
+-- FROM users AS u
+-- JOIN profiles1 AS p 
+-- ON p.user_id = u.id

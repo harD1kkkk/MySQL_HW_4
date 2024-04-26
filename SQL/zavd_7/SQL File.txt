@@ -1,0 +1,19 @@
+-- Task 1
+-- SELECT u.id, u.name
+-- FROM users as u
+-- WHERE (SELECT COUNT(*) FROM orders as o WHERE o.user_id = u.id) > 2;
+
+-- Task 2
+-- SELECT u.id, u.name
+-- FROM users u
+-- JOIN (SELECT user_id, SUM(total_price) AS total_spent
+--       FROM orders 
+--       GROUP BY user_id 
+--       HAVING SUM(total_price) > 1000) AS spent 
+-- ON u.id = spent.user_id;
+
+-- Task 3
+-- SELECT u.id, u.name
+-- FROM users as u
+-- JOIN profiles as p ON u.id = p.user_id
+-- WHERE p.city = (SELECT city FROM profiles WHERE user_id = 3);

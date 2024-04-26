@@ -1,0 +1,5 @@
+use Data_Base;
+SELECT u.id, u.name, u.email
+FROM Users u
+LEFT JOIN Orders o ON u.id = o.user_id
+GROUP BY u.id;

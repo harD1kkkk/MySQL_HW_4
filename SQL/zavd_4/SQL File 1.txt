@@ -1,0 +1,19 @@
+use db;
+-- Task 1
+-- SELECT o.id, op.product_id, op.quantity
+-- FROM Orders AS o
+-- JOIN Order_Products op 
+-- ON o.id = op.product_id;
+
+-- Task 2
+-- SELECT product_id
+-- FROM Order_Products
+-- GROUP BY product_id
+-- HAVING SUM(quantity) >= 10;
+
+
+-- Task 3
+-- DELETE FROM Order_Products
+-- WHERE product_id = 5;
+-- SELECT *
+-- FROM Order_Products

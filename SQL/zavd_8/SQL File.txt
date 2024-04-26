@@ -1,0 +1,22 @@
+-- Task 1
+-- SELECT p.user_id, u.name,u.email,u.password,p.date_of_birth,p.city,p.phone,p.money,p.account_create,p.last_activity
+-- FROM users AS u
+-- JOIN profiels AS p
+-- ON u.id=p.user_id
+-- WHERE p.account_create>'2023-01-01';
+
+-- Task 2
+-- DELETE 
+-- FROM profiels AS p
+-- WHERE p.last_activity>30;
+-- SELECT p.user_id, u.name,u.email,u.password,p.date_of_birth,p.city,p.phone,p.money,p.account_create,p.last_activity
+-- FROM users AS u
+-- JOIN profiels AS p
+-- ON u.id=p.user_id;
+
+-- Task 3
+SELECT p.user_id, u.name,u.email,u.password,p.date_of_birth,p.city,p.phone,p.money,p.account_create,p.last_activity
+FROM users AS u
+JOIN profiels AS p
+ON u.id=p.user_id
+WHERE p.user_id=NULL;

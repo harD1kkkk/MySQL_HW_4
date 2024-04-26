@@ -1,0 +1,31 @@
+use testdb;
+drop table if exists profiles1;
+drop table if exists users;
+
+create table if not exists users(
+    id INT NOT NULL AUTO_INCREMENT,
+    name varchar(255),
+    email VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+
+insert into users(name,email) values
+    ('oleksandr', 'oleksandr@gmail.com'),
+    ('mykola', 'mykola@gmail.com'),
+    ('volodymyr', 'volodymyr@gmail.com');
+    
+    
+create table if not exists profiles1(
+    id int primary key auto_increment,
+    user_id int,
+    birthday varchar(255),
+    phone varchar(255),
+    foreign key(user_id) references users(id) ON DELETE CASCADE
+);
+
+
+insert into profiles1(user_id,birthday,phone) values
+    (1, '14.08.2007', '096 942 44 24'),
+    (2, '13.02.2007', '096 940 24 44'),
+    (3, '01.10.2007', '096 944 52 21');

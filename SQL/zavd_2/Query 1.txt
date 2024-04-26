@@ -1,0 +1,30 @@
+use testdb;
+drop table if exists comments;
+drop table if exists articles;
+
+CREATE  TABLE IF NOT EXISTS articles (
+    id INT NOT NULL AUTO_INCREMENT,
+    title VARCHAR(255),
+    text VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS comments (
+    id int primary key auto_increment,
+    article_id INT,
+    text VARCHAR(255),
+    author VARCHAR(255),
+    FOREIGN KEY (article_id) REFERENCES articles(id)
+);
+
+
+insert into articles(title,text) values
+    ('DEATH NOTE', 'YOU ARE DEAD'),
+    ('MAVKA', 'SCARY WOMEN'),
+    ('2 WAR', 'GITLER VS STALIN');
+
+insert into comments(article_id,text,author) values
+    (1, 'HELLO WORLD!', 'WORLD'),
+    (2, 'HI!', 'TARAS'),
+    (3, 'GITLER', 'ADOLF'),
+    (3, 'ADOLF', 'ADOLF');
